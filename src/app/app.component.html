@@ -1,23 +1,18 @@
 <mat-toolbar class="navbar">
   <div>SunTravels</div>
   <div>
-
     <a [routerLink]="['./home']" style="color:#FFFFFF">Home</a>
     &nbsp;&nbsp;
     <a [routerLink]="['./about']" style="color:#FFFFFF">About</a>
     &nbsp;&nbsp;
     <a [routerLink]="['./contact']" style="color:#FFFFFF">Contact</a>
-
   </div>
 </mat-toolbar>
-
-
 
 <mat-sidenav-container>
   <!--<mat-sidenav #sidenav mode="side" [(opened)]="opened">Sidenav</mat-sidenav>-->
   <mat-sidenav #sidenav (opened)="log('Opened')" (closed)="log('Closed')" mode="side" [(opened)]="opened">
     <ul class="navbar-nav mr-auto">
-
       <li class="nav-item ">
         <a class="nav-link " [routerLink]="['./contracts']">Contracts<i class="material-icons">my_library_books</i> </a>
       </li>
@@ -25,7 +20,7 @@
       <li class="nav-item">
         <a class="nav-link " [routerLink]="['./search']">Search <i class="material-icons">search</i></a>
       </li>
-
+      <mat-divider></mat-divider>
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>

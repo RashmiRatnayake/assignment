@@ -1,1 +1,13 @@
-<p>search works!</p>
+<div class="container">
+
+  <div class="col-md-3" style="padding: 20px; margin-left:auto; margin-right:0;">
+    <button class="primary-btn"
+                 [ngClass]="{'active-btn': !(btndisabled),'disabled-btn':(btndisabled)}"
+                 (click)="search()">
+      Search Hotels
+    </button>
+  </div>
+  <div>
+    <app-resulthotellist></app-resulthotellist>
+  </div>
+</div>
