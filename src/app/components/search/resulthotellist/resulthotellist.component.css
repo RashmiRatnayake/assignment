@@ -1,0 +1,26 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1080;
+    padding-top: 100px;
+    left: 0;
+
+    top: 0;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+.modal-dialog {
+    z-index: 1080;
+    width: auto;
+    max-width: 960px;
+  }
+
+.green {
+  background-color: #009688;
+}
+
+div.modal div.modal-backdrop {
+    z-index: 0;
+}

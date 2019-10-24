@@ -10,7 +10,7 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   searchHotels() {
-      return this.http.get<any[]>("localhost:3000/hotels");
+      return this.http.get<any[]>("http://localhost:3000/hotels");
     }
 
 }

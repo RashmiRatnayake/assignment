@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddcontractComponent implements OnInit {
 
+  hotelName:String;
+
+
   constructor() { }
 
   ngOnInit() {
   }
+
+   newContractData(){
+      const newcontract={
+            hotelName:this.hotelName,
+
+
+      };
+      console.log(newcontract);
+
+
+    }
 
 }
