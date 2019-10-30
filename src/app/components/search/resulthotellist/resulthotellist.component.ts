@@ -16,7 +16,7 @@ export class ResulthotellistComponent implements OnInit {
   hotels:any;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+
 
   constructor(private searchService: SearchService) { }
 

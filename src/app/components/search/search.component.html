@@ -1,12 +1,38 @@
 <div class="container">
 
-  <div class="col-md-3" style="padding: 20px; margin-left:auto; margin-right:0;">
-    <button class="primary-btn"
-                 [ngClass]="{'active-btn': !(btndisabled),'disabled-btn':(btndisabled)}"
-                 (click)="search()">
-      Search Hotels
-    </button>
-  </div>
+
+  <form role="form" (submit)="newSearchData()">
+
+    <fieldset>
+
+
+      <mat-form-field>
+        <label for="myDatePicker1">Check-in date : </label>
+        <input matInput [matDatepicker]="myDatePicker1" [min]="minDate" [max]="maxDate">
+        <mat-datepicker-toggle [for]="myDatePicker1" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #myDatePicker1 startView="month"></mat-datepicker>
+      </mat-form-field>
+      <div class="form-group">
+        <label for="nights">Number of nights : </label>
+        <input type="number"  name="nights" placeholder="Enter number of nights ">
+      </div>
+      <div class="form-group">
+        <label for="rooms">Number of rooms : </label>
+        <input type="number"  name="rooms" placeholder="Enter number of rooms ">
+        <label for="adults">Number of adults : </label>
+        <input type="number"  name="adults" placeholder="Enter number of adults ">
+      </div>
+
+      <mat-divider></mat-divider>
+      <div class="col-md-3" style="padding: 20px; margin-left:auto; margin-right:0;">
+        <button class="primary-btn"
+                [ngClass]="{'active-btn': !(btndisabled),'disabled-btn':(btndisabled)}"
+                (click)="submit">
+          Search Hotels
+        </button>
+      </div>
+    </fieldset>
+  </form>
   <div>
     <app-resulthotellist></app-resulthotellist>
   </div>

@@ -3,10 +3,48 @@
   <fieldset>
 
     <div class="form-group">
-      <label for="hotelName">Hotel Name : </label>
-      <input type="text"  name="hotelName" placeholder="Enter hotel name ">
+      <label for="hotelName1">Hotel Name : </label>
+      <input type="text"  [(ngModel)]="hotelName" [ngModelOptions]="{standalone: true}" name="hotelName1" placeholder="Enter hotel name ">
     </div>
+    <div class="form-group">
+      <label for="contractId1">contractId : </label>
+      <input type="text" [(ngModel)]="contractId" [ngModelOptions]="{standalone: true}" name="contractId1" placeholder="Enter contractId " >
+    </div>
+    <mat-form-field>
 
+      <label for="validfrom1">Valid from : </label>
+      <input matInput [matDatepicker]="validfrom1" [min]="minDate" [max]="maxDate" [(ngModel)]="validFrom" [ngModelOptions]="{standalone: true}"  >
+      <mat-datepicker-toggle [for]="validfrom1" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #validfrom1 startView="month"></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <label for="validto">Valid to : </label>
+      <input matInput [matDatepicker]="validto1" [min]="minDate" [max]="maxDate" [(ngModel)]="validTo" [ngModelOptions]="{standalone: true}" >
+      <mat-datepicker-toggle [for]="validto1" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #validto1 startView="month"></mat-datepicker>
+    </mat-form-field>
+
+    <div class="form-group">
+      <label for="markup1">Markup : </label>
+      <input type="text"  name="markup1" placeholder="Enter markup " [(ngModel)]="markup" [ngModelOptions]="{standalone: true}" >
+    </div>
+    <div class="form-group">
+      <label for="roomtype1">Room type 1: </label>
+      <input type="text"  name="roomtype1" placeholder="Enter room type 1">
+      <label for="description1">Description : </label>
+      <input type="text"  name="description1" placeholder="Enter room type description">
+      <label for="maxadults1">Max number of adults : </label>
+      <input type="text"  name="maxadults1" placeholder="Enter max number of adults">
+    </div>
+    <div class="form-group">
+      <label for="roomtype2">Room type 2: </label>
+      <input type="text"  name="roomtype2" placeholder="Enter room type 2">
+      <label for="description2">Description : </label>
+      <input type="text"  name="description2" placeholder="Enter room type description">
+      <label for="maxadults2">Max number of adults : </label>
+      <input type="text"  name="maxadults2" placeholder="Enter max number of adults">
+    </div>
+    <mat-divider></mat-divider>
     <input type="submit" value="submit">
 
   </fieldset>

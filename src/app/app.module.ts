@@ -17,7 +17,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ResulthotellistComponent } from './components/search/resulthotellist/resulthotellist.component';
 import { ResulthotelComponent } from './components/search/resulthotel/resulthotel.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { ResulthotelComponent } from './components/search/resulthotel/resulthote
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialImportsAndExportsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
