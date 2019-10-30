@@ -3,6 +3,8 @@ import {ContractService} from '../../../service/contract/contract.service';
 
 import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
 import { AppDateAdapter, APP_DATE_FORMATS } from '../../../format-datepicker';
+import { SearchService } from '../../../service/search/search.service';
+
 
 import * as moment from 'moment';
 
@@ -17,6 +19,8 @@ import * as moment from 'moment';
 })
 export class AddcontractComponent implements OnInit {
 
+  hotels:any;
+
   hotelName:String;
   validFrom:any;
   validTo:any;
@@ -30,12 +34,22 @@ export class AddcontractComponent implements OnInit {
   contractId:String;
 
 
-  constructor(private contractService:ContractService) { }
+  constructor(private contractService:ContractService,
+              private searchService: SearchService
+              ) { }
+
+
 
   minDate = new Date();
   maxDate = new Date(2020, 11, 31); //date starts with month 0 = january. so this is december 10th
 
   ngOnInit() {
+
+  this.searchService.searchHotels().subscribe(res=> {
+      this.hotels=res;
+      console.log(res);
+      });
+
   }
 
    newContractData(){
@@ -51,6 +65,11 @@ export class AddcontractComponent implements OnInit {
        const formattedDate2 = moment(momentDate2).format("DD/MM/YYYY");
        console.log(formattedDate2);
 
+
+      const selectedhotel={
+            hotelName:this.hotelName
+      }
+
       const newcontract={
             //hotelName:this.hotelName,
             contractId:this.contractId,
@@ -65,14 +84,21 @@ export class AddcontractComponent implements OnInit {
         //    maxadults2:this.maxadults2
       };
       console.log(newcontract);
+      console.log(selectedhotel);
+
+      this.contractService.findHotel(selectedhotel).subscribe(res=>{
+        console.log(res);
+      });
 
       this.contractService.addContract(newcontract).subscribe(res=>{
             console.log("inside method");
-             if (res.state){
-                console.log("done");
-              }
+            console.log(res);
+            // if (res.state){
+            //    console.log("done");
+            //  }
           });
 
     }
 
 }
+

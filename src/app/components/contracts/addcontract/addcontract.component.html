@@ -2,9 +2,12 @@
 
   <fieldset>
 
+
     <div class="form-group">
-      <label for="hotelName1">Hotel Name : </label>
-      <input type="text"  [(ngModel)]="hotelName" [ngModelOptions]="{standalone: true}" name="hotelName1" placeholder="Enter hotel name ">
+      <label for="hotelName1">Select Hotel </label>
+      <select required class="form-control" [(ngModel)]="hotelName" name="hotelName1" >
+        <option *ngFor="let hotel of hotels" name="hotelName1"  [ngValue]="this.hotel.name">{{this.hotel.name}}</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="contractId1">contractId : </label>

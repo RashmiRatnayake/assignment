@@ -11,4 +11,8 @@ export class AppComponent implements OnInit{
   ngOnInit() {
 
   }
+
+  log(state){
+      console.log(state);
+    }
 }
