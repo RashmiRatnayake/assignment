@@ -9,6 +9,7 @@ export class ContractService {
 
   newcontract:any;
   selectedhotel:any;
+  newsearchcontract:any;
 
   constructor(private http: HttpClient) { }
 
@@ -23,5 +24,9 @@ export class ContractService {
         return this.http.post<any>("http://localhost:3000/hotels/findHotelDetails",selectedhotel);
 
     }
+
+    searchContract(newsearchcontract) {
+          return this.http.get<any[]>("http://localhost:3000/contracts/searchContracts/"+newsearchcontract.contractHotelId);
+        }
 
 }

@@ -1,0 +1,21 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 100px;
+    left: 0;
+
+    top: 0;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-dialog {
+    z-index: 2000;
+    width: auto;
+    max-width: 960px;
+  }
+.modal-backdrop {
+  z-index: -1;
+}

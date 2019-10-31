@@ -21,7 +21,7 @@ export class AddcontractComponent implements OnInit {
 
   hotels:any;
 
-  hotelName:String;
+  contractHotelId:String;
   validFrom:any;
   validTo:any;
   markup:any;
@@ -57,25 +57,25 @@ export class AddcontractComponent implements OnInit {
        validFrom:this.validFrom;
        validTo:this.validTo;
 
-       const momentDate1 = new Date(this.validFrom); // Replace event.value with your date value
-       const formattedDate1 = moment(momentDate1).format("DD/MM/YYYY");
-       console.log(formattedDate1);
+      // const momentDate1 = new Date(this.validFrom); // Replace event.value with your date value
+       //const formattedDate1 = moment(momentDate1).format("DD-MM-YYYY");
+      // console.log(formattedDate1);
 
-       const momentDate2 = new Date(this.validTo); // Replace event.value with your date value
-       const formattedDate2 = moment(momentDate2).format("DD/MM/YYYY");
-       console.log(formattedDate2);
+    //   const momentDate2 = new Date(this.validTo); // Replace event.value with your date value
+     //  const formattedDate2 = moment(momentDate2).format("DD-MM-YYYY");
+     //  console.log(formattedDate2);
 
-
-      const selectedhotel={
-            hotelName:this.hotelName
-      }
+   //   const selectedhotel={
+     //       hotelName:this.hotelName
+      //}
 
       const newcontract={
-            //hotelName:this.hotelName,
-            contractId:this.contractId,
-            validFrom:formattedDate1,
-            validTo:formattedDate2,
+
+            contractId:1,
+            validFrom:this.validFrom,
+            validTo:this.validTo,
             markup:this.markup,
+            contractHotelId:this.contractHotelId
            // roomtype1:this.roomtype1,
           //  description1:this.description1,
            // maxadults1:this.maxadults1,
@@ -84,11 +84,13 @@ export class AddcontractComponent implements OnInit {
         //    maxadults2:this.maxadults2
       };
       console.log(newcontract);
-      console.log(selectedhotel);
+    //  console.log(selectedhotel);
 
-      this.contractService.findHotel(selectedhotel).subscribe(res=>{
-        console.log(res);
-      });
+ //     this.contractService.findHotel(selectedhotel).subscribe(res=>{
+ //       console.log(res);
+ //     });
+
+
 
       this.contractService.addContract(newcontract).subscribe(res=>{
             console.log("inside method");

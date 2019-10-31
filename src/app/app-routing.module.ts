@@ -22,8 +22,7 @@ const routes: Routes = [  {path: '',redirectTo:'home',pathMatch:'full'},
                             {path: '',redirectTo:'contractoptions',pathMatch:'full'},
                             {path: 'contractoptions',  component: ContractoptionsComponent},
                              {path: 'addcontract',  component: AddcontractComponent},
-                              {path:'searchcontract', component: SearchcontractComponent}
-                             ]},
+                              {path:'searchcontract', component: SearchcontractComponent}]},
                              {path: 'search', component:SearchComponent}];
 
 
