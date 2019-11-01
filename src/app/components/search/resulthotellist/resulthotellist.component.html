@@ -19,7 +19,7 @@
       <td>{{hotel.hotelId}}</td>
       <td>price</td>
       <td><button type="button" class="green" data-toggle="modal" (click)="moreDetails(hotel)" data-target="#moreDetails">View More</button>
-        <div class="modal" id="moreDetails">
+        <div class="modal" id="moreDetails" data-backdrop="false">
           <div class="modal-dialog" >
             <div class="modal-content">
               <div class="modal-header">
@@ -73,6 +73,10 @@
 
   </tbody>
 </table>
+
+
+
+
 
 
 

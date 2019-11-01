@@ -16,7 +16,6 @@ import { SearchcontractComponent } from './components/contracts/searchcontract/s
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ResulthotellistComponent } from './components/search/resulthotellist/resulthotellist.component';
-import { ResulthotelComponent } from './components/search/resulthotel/resulthotel.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -32,8 +31,7 @@ import { FormsModule } from '@angular/forms';
     SearchcontractComponent,
     AboutComponent,
     ContactComponent,
-    ResulthotellistComponent,
-    ResulthotelComponent,
+    ResulthotellistComponent
 
   ],
   imports: [

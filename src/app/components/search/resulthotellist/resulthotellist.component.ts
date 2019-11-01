@@ -14,6 +14,7 @@ import { SearchService } from '../../../service/search/search.service';
 export class ResulthotellistComponent implements OnInit {
 
   hotels:any;
+  results:any;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -38,6 +39,10 @@ export class ResulthotellistComponent implements OnInit {
 
 
    }
+
+   moreDetails(){}
+
+
 
 
 

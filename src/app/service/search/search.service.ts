@@ -7,10 +7,17 @@ import { Observable } from 'rxjs';
 })
 export class SearchService {
 
+  newsearch:any;
+
   constructor(private http: HttpClient) { }
 
   searchHotels() {
       return this.http.get<any[]>("http://localhost:3000/hotels");
     }
+
+  searchResults(newsearch) {
+        console.log("second newsearch", newsearch);
+        return this.http.post("http://localhost:3000/results",newsearch);
+      }
 
 }

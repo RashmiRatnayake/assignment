@@ -13,10 +13,7 @@
         <option *ngFor="let hotel of hotels" name="hotelName1"  [ngValue]="this.hotel.hotelId">{{this.hotel.name}}</option>
       </select>
     </div>
-    <div class="form-group">
-      <label for="contractId1">contractId : </label>
-      <input type="text" [(ngModel)]="contractId" [ngModelOptions]="{standalone: true}" name="contractId1" placeholder="Enter contractId " >
-    </div>
+
     <mat-form-field>
 
       <label for="validfrom1">Valid from : </label>
