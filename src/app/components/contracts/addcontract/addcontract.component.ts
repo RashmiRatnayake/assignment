@@ -28,9 +28,12 @@ export class AddcontractComponent implements OnInit {
   roomtype1:String;
   description1:String;
   maxadults1:any;
+  price1:any;
   roomtype2:String;
   description2:String;
+  no1:any;
   maxadults2:any;
+  price2:any;
   contractId:String;
 
 
@@ -90,9 +93,21 @@ export class AddcontractComponent implements OnInit {
  //       console.log(res);
  //     });
 
+      const newroomtype1={
+
+                    numberOfRooms:this.no1,
+                    roomtypeName:this.roomtype1,
+                    description:this.description1,
+                    maxAdults:this.maxadults1,
+                    price:this.price1
+
+            };
+
+      const data={newcontract,newroomtype1};
 
 
       this.contractService.addContract(newcontract).subscribe(res=>{
+      //this.contractService.addContract(data).subscribe(res=>{
             console.log("inside method");
             console.log(res);
             // if (res.state){

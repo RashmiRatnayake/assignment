@@ -33,20 +33,28 @@
       <input type="text"  name="markup1" placeholder="Enter markup " [(ngModel)]="markup" [ngModelOptions]="{standalone: true}" >
     </div>
     <div class="form-group">
-      <label for="roomtype1">Room type 1: </label>
-      <input type="text"  name="roomtype1" placeholder="Enter room type 1">
-      <label for="description1">Description : </label>
-      <input type="text"  name="description1" placeholder="Enter room type description">
-      <label for="maxadults1">Max number of adults : </label>
-      <input type="text"  name="maxadults1" placeholder="Enter max number of adults">
+      <label for="roomtype11">Room type 1: </label>
+      <input type="text"  name="roomtype11" placeholder="Enter room type 1" [(ngModel)]="roomtype1" >
+      <label for="description11">Description : </label>
+      <input type="text"  name="description11" placeholder="Enter room type description" [(ngModel)]="description1">
+      <label for="no11">Number of rooms : </label>
+      <input type="number" name="no11" placeholder="Enter number of rooms" [(ngModel)]="no1">
+      <label for="maxadults11">Max number of adults : </label>
+      <input type="text"  name="maxadults11" placeholder="Enter max number of adults" [(ngModel)]="maxadults1">
+      <label for="price11">Price : </label>
+      <input type="number" step="any" name="price11" placeholder="Enter price" [(ngModel)]="price1">
     </div>
     <div class="form-group">
-      <label for="roomtype2">Room type 2: </label>
-      <input type="text"  name="roomtype2" placeholder="Enter room type 2">
-      <label for="description2">Description : </label>
-      <input type="text"  name="description2" placeholder="Enter room type description">
-      <label for="maxadults2">Max number of adults : </label>
-      <input type="text"  name="maxadults2" placeholder="Enter max number of adults">
+      <label for="roomtype22">Room type 2: </label>
+      <input type="text"  name="roomtype22" placeholder="Enter room type 2" [(ngModel)]="roomtype2">
+      <label for="description22">Description : </label>
+      <input type="text"  name="description2" placeholder="Enter room type description" [(ngModel)]="description2">
+      <label for="no22">Number of rooms : </label>
+      <input type="number" name="no22" placeholder="Enter number of rooms" [(ngModel)]="no2">
+      <label for="maxadults22">Max number of adults : </label>
+      <input type="text"  name="maxadults22" placeholder="Enter max number of adults" [(ngModel)]="maxadults2">
+      <label for="price22">Price : </label>
+      <input type="number" step="any" name="price22" placeholder="Enter price" [(ngModel)]="price2">
     </div>
     <mat-divider></mat-divider>
     <input type="submit" value="submit">

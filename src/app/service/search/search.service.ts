@@ -17,7 +17,8 @@ export class SearchService {
 
   searchResults(newsearch) {
         console.log("second newsearch", newsearch);
-        return this.http.post("http://localhost:3000/results",newsearch);
+        return this.http.post("http://localhost:3000/results?checkindate="+newsearch.checkindate+"&checkoutdate="+newsearch.checkoutdate+"&rooms="+newsearch.rooms+"&adults="+newsearch.adults+"&nights="+newsearch.nights,newsearch);
       }
+
 
 }

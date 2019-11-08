@@ -1,9 +1,7 @@
 button{
   margin-right: 3rem;
 }
-div{
-  margin: 2rem;
-}
+
 
 .navbar {
   justify-content: space-between;
@@ -15,19 +13,20 @@ span{
 
 mat-sidenav-container{
   height: 100%;
+  opacity: 1;
 }
 
 mat-sidenav, mat-sidenav-content{
   padding:16px;
+  opacity: 1;
 }
 
 mat-sidenav{
   background-color: #FFF3E0;
   width: 200px;
-}
+  overflow: auto;
+  opacity: 1;
 
-.center {
-  margin: 10rem;
 }
 
 mat-grid-tile{
@@ -55,4 +54,25 @@ mat-toolbar{
   background-color: #00695C;
   color: #FFFFFF;
   height: 75px;
+  overflow: auto;
+
+}
+
+#backgroundimage {
+background-image: url("../assets/bg.jpg");
+width: 100vw;
+height: 100vh;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: relative;
+}
+
+.layer {
+    background-color: rgba(248, 247, 216, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.94;
 }

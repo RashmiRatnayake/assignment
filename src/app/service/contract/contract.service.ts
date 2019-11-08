@@ -14,9 +14,7 @@ export class ContractService {
   constructor(private http: HttpClient) { }
 
     addContract(newcontract):Observable<any>{
-        console.log(newcontract);
         return this.http.post<any>("http://localhost:3000/contracts/addnewcontract",newcontract);
-
     }
 
     findHotel(selectedhotel):Observable<any>{

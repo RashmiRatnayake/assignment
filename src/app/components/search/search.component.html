@@ -41,18 +41,22 @@
         <th scope="col">Hotel Name</th>
         <th scope="col">Room type</th>
         <th scope="col">Price</th>
+        <th scope="col">Room No.</th>
         <th scope="col">Availability</th>
+
 
 
       </tr>
       </thead>
       <tbody>
+
       <ng-container *ngFor="let result of results">
         <tr class="table-secondary">
           <th scope="row"> {{result.hotelName}} </th>
-          <td>{{result.roomtype}}</td>
+          <td>{{result.roomtypeName}}</td>
           <td>{{result.price}}</td>
-          <td>{{result.availability}}</td>
+          <td>{{result.roomNo}}</td>
+          <td>Available</td>
 
         </tr>
         <mat-divider></mat-divider>
@@ -63,3 +67,9 @@
     </table>
   </div>
 </div>
+
+
+
+
+
+
