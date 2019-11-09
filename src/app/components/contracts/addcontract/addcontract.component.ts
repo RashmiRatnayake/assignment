@@ -4,6 +4,8 @@ import {ContractService} from '../../../service/contract/contract.service';
 import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
 import { AppDateAdapter, APP_DATE_FORMATS } from '../../../format-datepicker';
 import { SearchService } from '../../../service/search/search.service';
+import * as uuid from 'uuid';
+
 
 
 import * as moment from 'moment';
@@ -72,9 +74,13 @@ export class AddcontractComponent implements OnInit {
      //       hotelName:this.hotelName
       //}
 
+      var myContractId = uuid.v4();
+      console.log(myContractId);
+
+
       const newcontract={
 
-            contractId:1,
+            contractId:myContractId,
             validFrom:this.validFrom,
             validTo:this.validTo,
             markup:this.markup,
@@ -93,8 +99,12 @@ export class AddcontractComponent implements OnInit {
  //       console.log(res);
  //     });
 
+      var myRoomtype1Id = uuid.v4();
+      console.log(myRoomtype1Id);
+
       const newroomtype1={
 
+                    roomtypeId:this.myRoomtype1Id,
                     numberOfRooms:this.no1,
                     roomtypeName:this.roomtype1,
                     description:this.description1,
@@ -103,7 +113,21 @@ export class AddcontractComponent implements OnInit {
 
             };
 
-      const data={newcontract,newroomtype1};
+      var myRoomtype2Id = uuid.v4();
+      console.log(myRoomtype2Id);
+
+      const newroomtype2={
+
+                    roomtypeId:this.myRoomtype2Id,
+                    numberOfRooms:this.no2,
+                    roomtypeName:this.roomtype2,
+                    description:this.description2,
+                    maxAdults:this.maxadults2,
+                    price:this.price2
+
+             };
+
+      const data={newcontract,newroomtype1,newroomtype2};
 
 
       this.contractService.addContract(newcontract).subscribe(res=>{

@@ -40,14 +40,17 @@ export class SearchComponent implements OnInit {
 
   newSearchData(){
 
-         const momentDate2 = new Date(this.checkindate); // Replace event.value with your date value
-         const formattedDate2 = moment(momentDate2).format("YYYY-MM-DD");
+         const momentDate1 = new Date(this.checkindate); // Replace event.value with your date value
+         const formattedDate2 = moment(momentDate1).format("YYYY-MM-DD");
 
-          const momentDate3=moment(momentDate2, "YYYY-MM-DD").add(this.nights, 'days').format("YYYY-MM-DD");
+          const momentDate2=moment(momentDate1, "YYYY-MM-DD").add(this.nights, 'days').format("YYYY-MM-DD");
+
+
+
 
           const newsearch={
                 checkindate:formattedDate2,
-              checkoutdate:momentDate3,
+                checkoutdate:momentDate2,
                 nights:this.nights,
                 rooms:this.rooms,
                 adults:this.adults
@@ -61,6 +64,5 @@ export class SearchComponent implements OnInit {
               });
 
         }
-
 
 }

@@ -24,8 +24,6 @@ mat-sidenav, mat-sidenav-content{
 mat-sidenav{
   background-color: #FFF3E0;
   width: 200px;
-  overflow: auto;
-  opacity: 1;
 
 }
 
