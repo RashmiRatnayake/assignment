@@ -1,10 +1,8 @@
 <div class="container">
 
-
   <form role="form" #searchForm="ngForm" (submit)="newSearchData()">
 
     <fieldset>
-
 
       <mat-form-field>
         <label for="myDatePicker1">*Check-in date : </label>
@@ -12,11 +10,12 @@
         <mat-datepicker-toggle [for]="myDatePicker1" matSuffix></mat-datepicker-toggle>
         <mat-datepicker #myDatePicker1 startView="month"></mat-datepicker>
       </mat-form-field>
+
       <div class="form-group">
         <label for="nights1">*Number of nights : </label>
         <input type="number" id="nights1" name="nights" placeholder="Enter number of nights " [(ngModel)]="nights" required>
-
       </div>
+
       <div class="form-group">
         <label for="rooms1">*Number of rooms : </label>
         <input type="number"  id="rooms1" name="rooms" placeholder="Enter number of rooms " [(ngModel)]="rooms" required>
@@ -25,6 +24,7 @@
       </div>
 
       <mat-divider></mat-divider>
+
       <div class="col-md-3" style="padding: 20px; margin-left:auto; margin-right:0;">
         <button class="primary-btn"
                 [ngClass]="{'active-btn': !(btndisabled),'disabled-btn':(btndisabled)}"
@@ -32,45 +32,39 @@
           Search Hotels
         </button>
       </div>
+
     </fieldset>
+
   </form>
 
   <div *ngIf=dataavailable class="container2">
     <h5 align="left">Search results:</h5>
+
     <table class="table table-hover">
       <thead>
-      <tr>
-        <th scope="col">Hotel Name</th>
-        <th scope="col">Room type</th>
-        <th scope="col">Price</th>
-        <th scope="col">Room No.</th>
-        <th scope="col">Availability</th>
-
-
-
-      </tr>
+        <tr>
+          <th scope="col">Hotel Name</th>
+          <th scope="col">Room type</th>
+          <th scope="col">Price</th>
+          <th scope="col">Room No.</th>
+          <th scope="col">Availability</th>
+        </tr>
       </thead>
       <tbody>
-
-
-
-      <ng-container *ngFor="let result of results">
-        <tr class="table-secondary">
-          <th scope="row"> {{result.hotelName}} </th>
-          <td>{{result.roomtypeName}}</td>
-          <td>{{result.price}}</td>
-          <td>{{result.roomNo}}</td>
-          <td>{{result.availability}}</td>
-
-        </tr>
-        <mat-divider></mat-divider>
-      </ng-container>
-
-
+        <ng-container *ngFor="let result of results">
+          <tr class="table-secondary">
+            <th scope="row"> {{result.hotelName}} </th>
+            <td>{{result.roomtypeName}}</td>
+            <td>{{result.price}}</td>
+            <td>{{result.roomNo}}</td>
+            <td>{{result.availability}}</td>
+          </tr>
+          <mat-divider></mat-divider>
+        </ng-container>
       </tbody>
     </table>
-  </div>
 
+  </div>
 
 </div>
 

@@ -11,30 +11,27 @@
 <div id="backgroundimage">
   <div class="layer">
 
-
-
-<mat-sidenav-container>
-  <mat-sidenav #sidenav (opened)="log('Opened')" (closed)="log('Closed')" mode="side" [(opened)]="opened">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item ">
-        <a class="nav-link " [routerLink]="['./contracts']">Contracts<i class="material-icons">my_library_books</i> </a>
-      </li>
-      <mat-divider></mat-divider>
-      <li class="nav-item">
-        <a class="nav-link " [routerLink]="['./search']">Search <i class="material-icons">search</i></a>
-      </li>
-      <mat-divider></mat-divider>
-    </ul>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <button (click)="opened=!opened">Options</button>
-    <div style="text-align:center">
-      <img src="assets/suntravels.jpg">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav (opened)="log('Opened')" (closed)="log('Closed')" mode="side" [(opened)]="opened">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link " [routerLink]="['./contracts']">Contracts<i class="material-icons">my_library_books</i> </a>
+          </li>
+          <mat-divider></mat-divider>
+          <li class="nav-item">
+            <a class="nav-link " [routerLink]="['./search']">Search <i class="material-icons">search</i></a>
+          </li>
+          <mat-divider></mat-divider>
+        </ul>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <button (click)="opened=!opened">Options</button>
+        <div style="text-align:center">
+          <img src="assets/suntravels.jpg">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </div>
 </div>
 

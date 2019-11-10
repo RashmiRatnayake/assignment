@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import {MaterialImportsAndExportsModule} from './material-imports-and-exports/material-imports-and-exports.module';
+import { MaterialImportsAndExportsModule } from './material-imports-and-exports/material-imports-and-exports.module';
 import { HomeComponent } from './components/home/home.component';
 import { ContractsComponent } from './components/contracts/contracts.component';
 import { SearchComponent } from './components/search/search.component';
@@ -15,10 +15,7 @@ import { ContractoptionsComponent } from './components/contracts/contractoptions
 import { SearchcontractComponent } from './components/contracts/searchcontract/searchcontract.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { ResulthotellistComponent } from './components/search/resulthotellist/resulthotellist.component';
 import { FormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
@@ -30,8 +27,7 @@ import { FormsModule } from '@angular/forms';
     ContractoptionsComponent,
     SearchcontractComponent,
     AboutComponent,
-    ContactComponent,
-    ResulthotellistComponent
+    ContactComponent
 
   ],
   imports: [
