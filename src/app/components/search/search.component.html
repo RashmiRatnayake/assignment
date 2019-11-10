@@ -1,40 +1,41 @@
 <div class="container">
 
 
-  <form role="form" (submit)="newSearchData()">
+  <form role="form" #searchForm="ngForm" (submit)="newSearchData()">
 
     <fieldset>
 
 
       <mat-form-field>
         <label for="myDatePicker1">*Check-in date : </label>
-        <input matInput [matDatepicker]="myDatePicker1" [min]="minDate" [max]="maxDate" [(ngModel)]="checkindate" [ngModelOptions]="{standalone: true}" required>
+        <input matInput [matDatepicker]="myDatePicker1" id="myDatePicker1" [min]="minDate" [max]="maxDate" [(ngModel)]="checkindate" [ngModelOptions]="{standalone: true}" required>
         <mat-datepicker-toggle [for]="myDatePicker1" matSuffix></mat-datepicker-toggle>
         <mat-datepicker #myDatePicker1 startView="month"></mat-datepicker>
       </mat-form-field>
       <div class="form-group">
-        <label for="nights">*Number of nights : </label>
-        <input type="number"  name="nights" placeholder="Enter number of nights " [(ngModel)]="nights" required>
+        <label for="nights1">*Number of nights : </label>
+        <input type="number" id="nights1" name="nights" placeholder="Enter number of nights " [(ngModel)]="nights" required>
 
       </div>
       <div class="form-group">
-        <label for="rooms">*Number of rooms : </label>
-        <input type="number"  name="rooms" placeholder="Enter number of rooms " [(ngModel)]="rooms" required>
-        <label for="adults">*Number of adults : </label>
-        <input type="number"  name="adults" placeholder="Enter number of adults " [(ngModel)]="adults" required>
+        <label for="rooms1">*Number of rooms : </label>
+        <input type="number"  id="rooms1" name="rooms" placeholder="Enter number of rooms " [(ngModel)]="rooms" required>
+        <label for="adults1">*Number of adults : </label>
+        <input type="number" id="adults1" name="adults" placeholder="Enter number of adults " [(ngModel)]="adults" required>
       </div>
 
       <mat-divider></mat-divider>
       <div class="col-md-3" style="padding: 20px; margin-left:auto; margin-right:0;">
         <button class="primary-btn"
                 [ngClass]="{'active-btn': !(btndisabled),'disabled-btn':(btndisabled)}"
-                (click)="submit">
+                [disabled]="!searchForm.valid" (click)="submit">
           Search Hotels
         </button>
       </div>
     </fieldset>
   </form>
-  <div class="container2">
+
+  <div *ngIf=dataavailable class="container2">
     <h5 align="left">Search results:</h5>
     <table class="table table-hover">
       <thead>
@@ -51,13 +52,15 @@
       </thead>
       <tbody>
 
+
+
       <ng-container *ngFor="let result of results">
         <tr class="table-secondary">
           <th scope="row"> {{result.hotelName}} </th>
           <td>{{result.roomtypeName}}</td>
           <td>{{result.price}}</td>
           <td>{{result.roomNo}}</td>
-          <td>Available</td>
+          <td>{{result.availability}}</td>
 
         </tr>
         <mat-divider></mat-divider>
@@ -67,7 +70,10 @@
       </tbody>
     </table>
   </div>
+
+
 </div>
+
 
 
 

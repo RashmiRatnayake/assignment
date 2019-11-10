@@ -25,6 +25,8 @@ export class SearchComponent implements OnInit {
   nights:any;
   rooms:any;
   adults:any;
+  dataavailable:boolean;
+  dataunavailable:boolean;
 
   results:any;
 
@@ -33,7 +35,7 @@ export class SearchComponent implements OnInit {
   results2:any;
 
   minDate = new Date();
-  maxDate = new Date(2020, 11, 31); //date starts with month 0 = january. so this is december 10th
+  maxDate = new Date(2025, 11, 31); //date starts with month 0 = january. so this is december 31st
 
   ngOnInit() {
   }
@@ -43,9 +45,11 @@ export class SearchComponent implements OnInit {
          const momentDate1 = new Date(this.checkindate); // Replace event.value with your date value
          const formattedDate2 = moment(momentDate1).format("YYYY-MM-DD");
 
-          const momentDate2=moment(momentDate1, "YYYY-MM-DD").add(this.nights, 'days').format("YYYY-MM-DD");
 
 
+
+
+         const momentDate2=moment(momentDate1, "YYYY-MM-DD").add(this.nights, 'days').format("YYYY-MM-DD");
 
 
           const newsearch={
@@ -58,10 +62,52 @@ export class SearchComponent implements OnInit {
           console.log(newsearch);
 
           this.searchService.searchResults(newsearch).subscribe(res=> {
-              this.results=res;
+
+
+
               console.log("search results=");
               console.log(res);
-              });
+              //console.log(res[1].hotelId);
+
+
+              if(Object.keys(res).length >=1){
+                this.dataavailable= true;
+                console.log("true",this.dataavailable);
+
+                for(var i = 0; i < Object.keys(res).length; i++){
+                                console.log(res[i].hotelId);
+                                var x=res[i].hotelId;
+                                var y=res[i].roomtypeId;
+
+                                  var b = 0;
+                                  for(var a = 0; a < Object.keys(res).length; a++){
+                                    if( res[a].hotelId == x && res[a].roomtypeId == y){
+                                      b++;
+                                    }
+                                  }
+
+                                  console.log("this is b");
+                                  console.log(b);
+
+
+
+                                  if (b >= this.rooms){
+                                      console.log("set as true");
+                                      console.log(i);
+                                      res[i].availability="true";
+                                  }
+                              }
+
+
+              }
+              else{
+                this.dataavailable=false;
+              }
+
+              this.results=res;
+
+
+          });
 
         }
 

@@ -2,7 +2,6 @@ button{
   margin-right: 3rem;
 }
 
-
 .navbar {
   justify-content: space-between;
 }
@@ -24,7 +23,6 @@ mat-sidenav, mat-sidenav-content{
 mat-sidenav{
   background-color: #FFF3E0;
   width: 200px;
-
 }
 
 mat-grid-tile{
@@ -53,7 +51,6 @@ mat-toolbar{
   color: #FFFFFF;
   height: 75px;
   overflow: auto;
-
 }
 
 #backgroundimage {

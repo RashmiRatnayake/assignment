@@ -20,10 +20,9 @@ export class ContractService {
     findHotel(selectedhotel):Observable<any>{
         console.log(selectedhotel);
         return this.http.post<any>("http://localhost:3000/hotels/findHotelDetails",selectedhotel);
-
     }
 
-    searchContract(newsearchcontract) {
+    searchContract(newsearchcontract){
           return this.http.get<any[]>("http://localhost:3000/contracts/searchContracts/"+newsearchcontract.contractHotelId);
         }
 

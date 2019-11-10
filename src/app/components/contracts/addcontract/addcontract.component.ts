@@ -34,6 +34,7 @@ export class AddcontractComponent implements OnInit {
   roomtype2:String;
   description2:String;
   no1:any;
+  no2:any;
   maxadults2:any;
   price2:any;
   contractId:String;
@@ -104,7 +105,7 @@ export class AddcontractComponent implements OnInit {
 
       const newroomtype1={
 
-                    roomtypeId:this.myRoomtype1Id,
+                    roomtypeId:myRoomtype1Id,
                     numberOfRooms:this.no1,
                     roomtypeName:this.roomtype1,
                     description:this.description1,
@@ -118,7 +119,7 @@ export class AddcontractComponent implements OnInit {
 
       const newroomtype2={
 
-                    roomtypeId:this.myRoomtype2Id,
+                    roomtypeId:myRoomtype2Id,
                     numberOfRooms:this.no2,
                     roomtypeName:this.roomtype2,
                     description:this.description2,
@@ -127,7 +128,11 @@ export class AddcontractComponent implements OnInit {
 
              };
 
-      const data={newcontract,newroomtype1,newroomtype2};
+      const data={
+        contractdata: newcontract,
+        newroomtype1data: newroomtype1,
+        newroomtype2data: newroomtype2
+        };
 
 
       this.contractService.addContract(newcontract).subscribe(res=>{

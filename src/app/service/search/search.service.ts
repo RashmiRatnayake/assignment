@@ -20,5 +20,4 @@ export class SearchService {
         return this.http.post("http://localhost:3000/results?checkindate="+newsearch.checkindate+"&checkoutdate="+newsearch.checkoutdate+"&rooms="+newsearch.rooms+"&adults="+newsearch.adults+"&nights="+newsearch.nights,newsearch);
       }
 
-
 }

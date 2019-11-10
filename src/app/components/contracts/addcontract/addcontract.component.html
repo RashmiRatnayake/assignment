@@ -2,75 +2,89 @@
   <h2>Add Contract</h2>
 </div>
 
-<form role="form" (submit)="newContractData()">
+<form role="form" #addContractForm="ngForm" (submit)="newContractData()">
 
   <fieldset>
 
-
     <div class="form-group">
-      <label for="hotelName1">Select Hotel </label>
-      <select required class="form-control" [(ngModel)]="contractHotelId" name="hotelName1" >
+      <label for="hotel">*Select Hotel </label>
+      <select class="form-control" [(ngModel)]="contractHotelId" name="hotelName1" id="hotel" required>
         <option *ngFor="let hotel of hotels" name="hotelName1"  [ngValue]="this.hotel.hotelId">{{this.hotel.name}}</option>
       </select>
     </div>
 
     <mat-form-field>
-
-      <label for="validfrom1">Valid from : </label>
+      <label>*Valid from : </label>
       <input matInput [matDatepicker]="validfrom1" [min]="minDate" [max]="maxDate" [(ngModel)]="validFrom" [ngModelOptions]="{standalone: true}" required >
       <mat-datepicker-toggle [for]="validfrom1" matSuffix></mat-datepicker-toggle>
       <mat-datepicker #validfrom1 startView="month"></mat-datepicker>
     </mat-form-field>
+
     <mat-form-field>
-      <label for="validto">Valid to : </label>
+      <label>*Valid to : </label>
       <input matInput [matDatepicker]="validto1" [min]="minDate" [max]="maxDate" [(ngModel)]="validTo" [ngModelOptions]="{standalone: true}" required >
       <mat-datepicker-toggle [for]="validto1" matSuffix></mat-datepicker-toggle>
       <mat-datepicker #validto1 startView="month"></mat-datepicker>
     </mat-form-field>
 
     <div class="form-group">
-      <label for="markup1">Markup : </label>
-      <input type="text"  name="markup1" placeholder="Enter markup " [(ngModel)]="markup" [ngModelOptions]="{standalone: true}" required>
+      <label for="markup1">*Markup : </label>
+      <input type="number" step="0.01" name="markup1" id="markup1" name="markup" placeholder="Enter markup " [(ngModel)]="markup" required>
     </div>
+
     <mat-divider></mat-divider>
     <br>
+
     <div class="form-group">
-      <label for="roomtype11">Room type 1: </label>
-      <input type="text"  name="roomtype11" id="roomtype11" placeholder="Enter room type 1" [(ngModel)]="roomtype1" >
+      <label>Room type 1: </label>
+      <input type="text"  name="roomtype11" placeholder="Enter room type 1" [(ngModel)]="roomtype1" >
     </div>
+
     <div class="form-group">
-      <label for="no11">Number of rooms : </label>
-      <input type="number" name="no11" min="0" id="no11" placeholder="Enter number of rooms" [(ngModel)]="no1">
-      <label for="maxadults11">Max number of adults : </label>
+      <label>Number of rooms : </label>
+      <input type="number" name="no11" min="0"  placeholder="Enter number of rooms" [(ngModel)]="no1">
+      <label>Max number of adults : </label>
       <input type="number"  name="maxadults11" min="0" placeholder="Enter max number of adults" [(ngModel)]="maxadults1" >
     </div>
+
     <div class="form-group">
-      <label for="price11">Price : </label>
+      <label>Price : </label>
       <input type="number" step="0.01" min="0" name="price11" placeholder="Enter price" [(ngModel)]="price1" >
-      <label for="description11">Description : </label>
+      <label>Description : </label>
       <input type="text" name="description11" placeholder="Enter room type description" [(ngModel)]="description1">
     </div>
+
     <mat-divider></mat-divider>
     <br>
+
     <div class="form-group">
-      <label for="roomtype22">Room type 2: </label>
+      <label>Room type 2: </label>
       <input type="text"  min="0" name="roomtype22" placeholder="Enter room type 2" [(ngModel)]="roomtype2">
     </div>
+
     <div class="form-group">
-      <label for="no22">Number of rooms : </label>
+      <label>Number of rooms : </label>
       <input type="number" min="0" name="no22" placeholder="Enter number of rooms" [(ngModel)]="no2">
-      <label for="maxadults22">Max number of adults : </label>
+      <label>Max number of adults : </label>
       <input type="number"  name="maxadults22" min="0" placeholder="Enter max number of adults" [(ngModel)]="maxadults2">
     </div>
+
     <div class="form-group">
-      <label for="price22">Price : </label>
+      <label>Price : </label>
       <input type="number" step="0.01" min="0" name="price22" placeholder="Enter price" [(ngModel)]="price2">
-      <label for="description22">Description : </label>
+      <label>Description : </label>
       <input type="text"  name="description2" placeholder="Enter room type description" [(ngModel)]="description2">
     </div>
+
     <mat-divider></mat-divider>
     <br>
-    <input type="submit" value="submit">
+
+    <button class="primary-btn"
+            [ngClass]="{'active-btn': !(btndisabled),'disabled-btn':(btndisabled)}"
+            [disabled]="!addContractForm.valid" (click)="submit">
+      Submit
+    </button>
 
   </fieldset>
 </form>
+
