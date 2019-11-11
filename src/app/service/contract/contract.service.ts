@@ -13,9 +13,13 @@ export class ContractService {
 
   constructor(private http: HttpClient) { }
 
-    addContract(newcontract):Observable<any>{
-        return this.http.post<any>("http://localhost:3000/contracts/addnewcontract",newcontract);
-    }
+   // addContract(newcontract):Observable<any>{
+   //     return this.http.post<any>("http://localhost:3000/contracts/addnewcontract",newcontract);
+   // }
+
+    addContract(data):Observable<any>{
+            return this.http.post<any>("http://localhost:3000/contracts/addnewcontract",data);
+        }
 
     findHotel(selectedhotel):Observable<any>{
         console.log(selectedhotel);

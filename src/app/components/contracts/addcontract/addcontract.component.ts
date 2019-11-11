@@ -105,14 +105,20 @@ export class AddcontractComponent implements OnInit {
              };
 
       const data={
-        contractdata: newcontract,
-        newroomtype1data: newroomtype1,
-        newroomtype2data: newroomtype2
+        contract: newcontract,
+        roomtype1: newroomtype1,
+        roomtype2: newroomtype2
         };
 
 
-      this.contractService.addContract(newcontract).subscribe(res=>{
-      //this.contractService.addContract(data).subscribe(res=>{
+   //   this.contractService.addContract(newcontract).subscribe(res=>{
+   //         console.log("inside method");
+   //        console.log(res);
+
+                                                                                                                                     //      });
+
+
+      this.contractService.addContract(data).subscribe(res=>{
             console.log("inside method");
             console.log(res);
 
