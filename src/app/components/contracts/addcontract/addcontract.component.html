@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Add Contract</h2>
+  <h2 align="left">Add Contract</h2>
 </div>
 
 <form role="form" #addContractForm="ngForm" (submit)="newContractData()">
@@ -7,7 +7,7 @@
   <fieldset>
 
     <div class="form-group">
-      <label for="hotel">*Select Hotel </label>
+      <label for="hotel" >*Select Hotel </label>
       <select class="form-control" [(ngModel)]="contractHotelId" name="hotelName1" id="hotel" required>
         <option *ngFor="let hotel of hotels" name="hotelName1"  [ngValue]="this.hotel.hotelId">{{this.hotel.name}}</option>
       </select>
