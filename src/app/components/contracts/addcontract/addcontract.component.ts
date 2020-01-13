@@ -121,6 +121,7 @@ export class AddcontractComponent implements OnInit {
       this.contractService.addContract(data).subscribe(res=>{
             console.log("inside method");
             console.log(res);
+            alert("Contract Added");
 
           });
 

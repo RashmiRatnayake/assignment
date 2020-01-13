@@ -13,7 +13,7 @@ export class SearchcontractComponent implements OnInit {
 
   constructor(private contractService:ContractService,
                             private searchService: SearchService) { }
-
+  modaldata:any;
   hotels:any;
   contractHotelId:any;
   searchContractResults:any;
@@ -31,6 +31,8 @@ export class SearchcontractComponent implements OnInit {
 
         this.contractService.searchContract(newsearchcontract).subscribe(res=>{
                     this.searchContractResults=res;
+                    console.log(res);
         });
    }
+
 }
